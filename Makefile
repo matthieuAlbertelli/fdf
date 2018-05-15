@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: acoulomb <acoulomb@student.42.fr>          +#+  +:+       +#+         #
+#    By: malberte <malberte@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/03 22:08:39 by acoulomb          #+#    #+#              #
-#    Updated: 2018/05/13 23:55:45 by acoulomb         ###   ########.fr        #
+#    Updated: 2018/05/15 20:11:50 by malberte         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,11 +33,11 @@ LDFLAGS = -L $(LFTPATH) -lft $(MLX_FLAGS)
 NAME = fdf
 
 #SRCS:
-SRCS =	main.c \
-		ft_draw_line.c \
+SRCS =	ft_position.c \
 		ft_engine.c \
+		ft_draw_line.c \
 		ft_putpixel_octant.c \
-		ft_read_map.c
+		main.c
 
 #OBJ:
 OBJS = $(SRCS:.c=.o)
