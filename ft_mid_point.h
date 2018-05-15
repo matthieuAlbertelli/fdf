@@ -6,16 +6,16 @@
 /*   By: malberte <malberte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/12 12:20:50 by malberte          #+#    #+#             */
-/*   Updated: 2018/05/13 12:53:11 by malberte         ###   ########.fr       */
+/*   Updated: 2018/05/15 19:51:44 by malberte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_MID_POINT_H
 # define FT_MID_POINT_H
+
 # include "ft_position.h"
 # include "ft_engine.h"
 
-typedef t_pos_2d	t_pixel;
 typedef enum		e_side
 {
 	LEFT = 0,
