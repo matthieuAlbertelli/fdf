@@ -6,7 +6,7 @@
 /*   By: malberte <malberte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/12 11:46:15 by malberte          #+#    #+#             */
-/*   Updated: 2018/05/13 12:38:17 by malberte         ###   ########.fr       */
+/*   Updated: 2018/05/15 21:53:55 by malberte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ static void	init_up_low_pix(t_mid_point *mp, const t_pixel *a, const t_pixel *b)
 
 static void	init_octant(t_mid_point *mp)
 {
+	mp->octant = 0;
 	mp->delta_a_b[Y] = (*mp->upper)[Y] - (*mp->lower)[Y];
 	if ((*mp->upper)[X] < (*mp->lower)[X])
 	{
