@@ -6,7 +6,7 @@
 /*   By: malberte <malberte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/12 11:46:15 by malberte          #+#    #+#             */
-/*   Updated: 2018/05/15 21:53:55 by malberte         ###   ########.fr       */
+/*   Updated: 2018/05/15 22:29:07 by malberte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,13 +57,14 @@ static void	init_octant(t_mid_point *mp)
 void		ft_draw_line(t_engine *e, const t_pixel *pxa, const t_pixel *pxb)
 {
 	static t_mid_point	mp;
-	static void			(*f_putpixel_octant[4])(t_engine *, t_mid_point *);
-
-	f_putpixel_octant[0] = &putpix_octant_0;
-	f_putpixel_octant[1] = &putpix_octant_1;
-	f_putpixel_octant[2] = &putpix_octant_2;
-	f_putpixel_octant[3] = &putpix_octant_3;
+	static t_putpix_octant f_putpix_octant[4] =
+	{	
+		putpix_octant_0,
+		putpix_octant_1,
+		putpix_octant_2,
+		putpix_octant_3
+	};
 	init_up_low_pix(&mp, pxa, pxb);
 	init_octant(&mp);
-	(*f_putpixel_octant[mp.octant])(e, &mp);
+	(*f_putpix_octant[mp.octant])(e, &mp);
 }

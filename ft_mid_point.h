@@ -6,7 +6,7 @@
 /*   By: malberte <malberte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/12 12:20:50 by malberte          #+#    #+#             */
-/*   Updated: 2018/05/15 19:51:44 by malberte         ###   ########.fr       */
+/*   Updated: 2018/05/15 22:26:53 by malberte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ typedef struct		s_mid_point
 	short int	octant;
 }					t_mid_point;
 
+typedef				void (*t_putpix_octant)(t_engine *e, t_mid_point *mp);
 void				ft_draw_line(t_engine *e, const t_pixel *a,
 												const t_pixel *b);
 void				putpix_octant_0(t_engine *e, t_mid_point *md);
