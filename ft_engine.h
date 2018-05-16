@@ -6,7 +6,7 @@
 /*   By: malberte <malberte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/12 13:51:56 by malberte          #+#    #+#             */
-/*   Updated: 2018/05/16 03:03:43 by malberte         ###   ########.fr       */
+/*   Updated: 2018/05/16 04:18:37 by malberte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,7 @@ void			ft_perspective_projection(	t_pixel px,
 											const t_engine *e,
 											const t_pos_3d p);
 int				ft_read_map(t_engine *e, char *filename);
-
+void			ft_print_map(t_engine *e);
+void			ft_translation(t_engine *e, t_point vector);
+void			ft_draw_fdf(t_engine *e);
 #endif

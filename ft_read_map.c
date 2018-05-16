@@ -6,7 +6,7 @@
 /*   By: malberte <malberte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/13 11:00:53 by acoulomb          #+#    #+#             */
-/*   Updated: 2018/05/16 03:05:26 by malberte         ###   ########.fr       */
+/*   Updated: 2018/05/16 04:25:22 by malberte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int			ft_read_map(t_engine *e, char *filename)
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 		return (-1);
-	point[Y] = 0;
+	point[Z] = 0;
 	line = NULL;
 	while ((gnl_status = ft_get_next_line(fd, &line)))
 	{
@@ -66,17 +66,49 @@ int			ft_read_map(t_engine *e, char *filename)
 		if (next != NULL)
 		{
 			reallocif_map3d(e);
+			ft_heap_init(&(e->map3d[e->map3d_i]), HEAP_SIZE);
 			point[X] = 0;
 			while (*next)
 			{
-				point[Z] = ft_atoin(&next, next);
-				ft_heap_add(&(e->map3d[Y]), point);
+				point[Y] = ft_atoin(&next, next);
+				ft_heap_add(&(e->map3d[point[Z]]), point);
 				++point[X];
 			}
 		}
 		ft_strdel(&line);
-		++point[Y];
+		++e->map3d_i;
+		++point[Z];
 	}
 	close(fd);
 	return (1);
+}
+
+void		ft_print_map(t_engine *e)
+{
+	unsigned int y;
+	unsigned int x;
+	int dim;
+
+	y = 0;
+	while (y < e->map3d_i)
+	{
+		x = 0;
+		while (x < ((e->map3d)[y]).i)
+		{
+			dim = X;
+			ft_putstr("(");
+			while (dim < 3)
+			{
+				ft_putnbr(e->map3d[y].tab[x][dim]);
+				if (dim == 2)
+					ft_putchar(')');
+				else
+					ft_putchar(',');
+				++dim;
+			}
+			++x;
+		}
+		ft_putchar('\n');
+		++y;
+	}
 }

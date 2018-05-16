@@ -6,7 +6,7 @@
 /*   By: malberte <malberte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/16 02:09:22 by malberte          #+#    #+#             */
-/*   Updated: 2018/05/16 03:01:04 by malberte         ###   ########.fr       */
+/*   Updated: 2018/05/16 03:16:17 by malberte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 #include "libft/libft.h"
 #include "ft_point_heap.h"
 
-# define HEAP_SIZE 100
-
-int	ft_heap_init_point(t_point_heap *heap, unsigned int size)
+int	ft_heap_init(t_point_heap *heap, unsigned int size)
 {
 	if (heap == NULL)
 	{
