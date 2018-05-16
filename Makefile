@@ -6,7 +6,7 @@
 #    By: malberte <malberte@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/03 22:08:39 by acoulomb          #+#    #+#              #
-#    Updated: 2018/05/15 20:11:50 by malberte         ###   ########.fr        #
+#    Updated: 2018/05/16 02:59:03 by malberte         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,8 @@ SRCS =	ft_position.c \
 		ft_engine.c \
 		ft_draw_line.c \
 		ft_putpixel_octant.c \
+		ft_point_heap.c \
+		ft_read_map.c \
 		main.c
 
 #OBJ:
