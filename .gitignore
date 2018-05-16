@@ -56,3 +56,4 @@ libft/
 .DS_Store
 .vscode/launch.json
 fdf
+.vscode/settings.json
